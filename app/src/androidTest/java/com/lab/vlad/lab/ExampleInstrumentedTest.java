@@ -1,4 +1,4 @@
-package com.lab.vlad.lab2;
+package com.lab.vlad.lab;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

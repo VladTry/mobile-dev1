@@ -1,4 +1,4 @@
-package com.lab.vlad.lab2;
+package com.lab.vlad.lab;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
