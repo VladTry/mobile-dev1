@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true"
+    tools:layout_editor_absoluteX="16dp"
+    tools:layout_editor_absoluteY="41dp"
+    tools:ignore="MissingConstraints"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+        <EditText
+            android:id="@+id/etName"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignStart="@+id/sayHello"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/etname_focused_state"
+            android:ems="10"
+            android:hint="@string/Inputyourname"
+            android:inputType="textPersonName"
+            tools:layout_editor_absoluteX="76dp"
+            tools:layout_editor_absoluteY="218dp" />
+
+        <EditText
+            android:id="@+id/edt_thief"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true" />
+
+        <Button
+            android:id="@+id/clearText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/etName"
+            android:layout_alignBottom="@+id/etName"
+            android:layout_marginStart="24dp"
+            android:layout_toEndOf="@+id/etName"
+            android:text="@string/Clear" />
+
+        <Button
+            android:id="@+id/sayHello"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="19dp"
+            android:layout_marginTop="77dp"
+            android:text="@string/sayHello" />
+
+        <TextView
+            android:id="@+id/textWithName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/etName"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/sayHello"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:text="" />
+    </RelativeLayout>
