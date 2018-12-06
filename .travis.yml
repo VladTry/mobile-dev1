@@ -1,11 +1,11 @@
 language: android
 jdk: oraclejdk8
 before_script:
-  - echo yes | sdkmanager "build-tools;28.0.0"
+  - echo yes | sdkmanager "build-tools;27.0.3"
   - chmod +x gradlew
-script:
-  - ./gradlew connectedAndroidTest
-  - ./gradlew assembleDebug
+ script:
+ - ./gradlew connectedAndroidTest
+ - ./gradlew assembleDebug
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
   - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
