@@ -1,6 +1,3 @@
 <resources>
-    <string name="app_name">lab2</string>
-    <string name="Clear">Clear</string>
-    <string name="sayHello">Say Hello!</string>
-    <string name="Inputyourname">Input your name</string>
+    <string name="app_name">lab8</string>
 </resources>
