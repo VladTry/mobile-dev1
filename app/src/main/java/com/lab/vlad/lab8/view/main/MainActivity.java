@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity implements MainInterface {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        setTitle("WSJ - Recent");
+        setTitle("lab6-8");
 
         recyclerView = findViewById(R.id.rv_main);
         linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
@@ -44,6 +44,15 @@ public class MainActivity extends AppCompatActivity implements MainInterface {
         Intent mIntent = new Intent(this, WebViewActivity.class);
         mIntent.putExtra("URL", url);
         startActivity(mIntent);
+    }
+    public interface DetailsView {
+        void addToFavourite();
+
+        void removeFromFavourite();
+
+        void markFavourite(boolean favourite);
+
+        void setItems(Children hit);
     }
 }
 
