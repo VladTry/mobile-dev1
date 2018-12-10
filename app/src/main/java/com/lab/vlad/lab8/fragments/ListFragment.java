@@ -15,7 +15,6 @@ import android.widget.Toast;
 import com.lab.vlad.lab8.laba.R;
 import com.lab.vlad.lab8.entity.children.Children;
 import com.lab.vlad.lab8.presenter.ListPresenter;
-import com.lab.vlad.lab8.presenter.ListPrisenterImpl;
 import com.lab.vlad.lab8.view.mainListView;
 
 import java.util.ArrayList;

@@ -1,7 +1,5 @@
 package com.lab.vlad.lab8.fragments;
 
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
@@ -12,26 +10,18 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.lab.vlad.lab8.R;
-import com.lab.vlad.lab8.entity.children.Children;
-import com.lab.vlad.lab8.model.Article;
+import com.lab.vlad.lab8.adapter.MainAdapter;
 import com.lab.vlad.lab8.presenter.FavPresenter;
-import com.lab.vlad.lab8.presenter.FavPresenterImpl;
-import com.lab.vlad.lab8.view.FavouritesView;
-import com.google.gson.Gson;
+import com.lab.vlad.lab8.view.main.FavouritesView;
 
 import java.util.ArrayList;
-import java.util.Map;
-import java.util.Objects;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class FavouriteFragment extends Fragment implements FavouritesView {
-
-    public final static String FAVOURITE = "Favourite";
-    private ArticleAdapter adapter;
-
-    private FavPresenter presenter;
+public class FavouriteFragment extends Fragment implements FavoritesView {
+    private MainAdapter adapter;
+    private FavoritesPresenter presenter;
     @BindView(R.id.favorite_recycler_view)
     protected RecyclerView recyclerView;
 
@@ -40,26 +30,16 @@ public class FavouriteFragment extends Fragment implements FavouritesView {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_favorites, container, false);
         ButterKnife.bind(this, view);
-        presenter = new FavPresenterImpl(this);
-        initRecyclerView();
+        presenter = new FavoritesPresenterImpl(this, getActivity());
+        presenter.requestData();
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this.getContext());
+        recyclerView.setLayoutManager(layoutManager);
         return view;
     }
 
     @Override
-    public void onResume() {
-        super.onResume();
-        presenter.requestDataFromStorage(getActivity());
-    }
-
-    private void initRecyclerView() {
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
-        recyclerView.setLayoutManager(layoutManager);
-
-    }
-
-    @Override
-    public void setDataToRecyclerView(ArrayList <Children> childrenArrayList) {
-        adapter = new ArticleAdapter(getActivity(), childrenArrayList);
+    public void setData(ArrayList<MainRes> NewsRes) {
+        adapter = new MainAdapter(this.getContext(), NewsRes);
         recyclerView.setAdapter(adapter);
     }
 }
